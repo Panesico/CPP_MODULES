@@ -1,10 +1,12 @@
 #include <iostream>
-#include "animal.hpp"
 #ifndef DOG_HPP
 # define DOG_HPP
+# include "animal.hpp"
+# include "brain.hpp"
 class Dog : virtual public Animal{
 		private:
 		std::string _type;
+		Brain *_brain;
 		public:
 		Dog( const Dog &dog );
 		Dog();

@@ -2,12 +2,7 @@
 #include "animal.hpp"
 #include "cat.hpp"
 #include "dog.hpp"
-
-void	ft_leaks()
-{
-	system("leaks -q a.out");
-}
-
+#include "brain.hpp"
 int main()
 {
 	const Animal* meta = new Animal();
