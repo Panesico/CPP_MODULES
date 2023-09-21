@@ -2,6 +2,8 @@
 
 Dog::Dog(){
 	std::cout << "Dog constructor called" << std::endl;
+	Animal::_type = "Dog";
+	_type = "Dog";
 }
 
 Dog::Dog(std::string type){

@@ -2,6 +2,7 @@
 
 Animal::Animal(){
 	std::cout << "Animal constructor called" << std::endl;
+	_type = "Animal";
 }
 
 Animal::Animal(std::string type){

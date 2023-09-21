@@ -2,6 +2,8 @@
 
 Cat::Cat(){
 	std::cout << "Cat constructor called" << std::endl;
+	Animal::_type = "Cat";
+	_type = "Cat";
 }
 
 Cat::Cat(std::string type){
