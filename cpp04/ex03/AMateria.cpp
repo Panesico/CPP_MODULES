@@ -1,29 +1,47 @@
+#include <iostream>
 #include "AMateria.hpp"
-
-AMateria::AMateria(std::string const &type)
-{
-	std::cout << "AMateria type constructor called" << std::endl;
-	_type = type;
-}
-
-AMateria::AMateria( const AMateria &aMateria )
-{
-	std::cout << "AMateria copy constructor called" << std::endl;
-}
 
 AMateria::AMateria()
 {
-	std::cout << "AMateria constructor called" << std::endl;
+
+}
+
+AMateria::AMateria(std::string const & type)
+{
+
+}
+
+AMateria::AMateria(const AMateria &copy)
+{
+
+}
+
+AMateria *AMateria::operator=(const AMateria &copy)
+{
+
 }
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria destructor called" << std::endl;
+
 }
 
-AMateria	&AMateria::operator=(const AMateria &copy)
+std::string const &AMateria::getType() const
 {
-	std::cout << "AMateria copy operator called" << std::endl;
+	return _type;
+}
 
-	return *this;
+AMateria::AMateria* clone()
+{
+
+}
+
+void AMateria::use(ICharacter& target)
+{
+	if (target.getName() == "Ice")
+		std::cout <<  "* shoots an ice bolt at" << target.getName() << "*" << std::endl;
+	else if (target.getName() == "Cure")
+		std::cout <<  "* heals " << target.getName() << "'s wounds *" << std::endl;
+	else
+		std::cout <<  "Unkown spell" << std::endl;
 }

@@ -1,23 +1,14 @@
-#include <iostream>
-
 #ifndef ICE_HPP
 # define ICE_HPP
 
-# include "AMateria.hpp"
-
-class Ice : public AMateria
+class Ice
 {
-private:
-	std::string _type;
 public:
-	Ice(std::string const & type);
-	Ice( const Ice &ice );
 	Ice();
-	virtual ~Ice();
-	Ice	&operator=(const Ice &copy);
-	const std::string  &getType() const;
-	Ice* clone() const;
-	void use(ICharacter& target);
+	Ice(const Ice &copy);
+	Ice *operator=(const Ice &copy);
+	~Ice();
+
 };
 
 #endif

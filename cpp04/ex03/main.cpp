@@ -1,3 +1,7 @@
+//TODO
+// Finish constructors and destructors.
+// Figure out a way to link a dependency without creating a loop.
+
 #include <iostream>
 #include "ICharacter.hpp"
 #include "Character.hpp"

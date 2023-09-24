@@ -1,22 +1,19 @@
-#include <iostream>
-
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
-# include "ICharacter.hpp"
-# include "IMateriaSource.hpp"
+#include <iostream>
 
 class AMateria
 {
 protected:
-	std::string _type;
+	std::string	_type;
 public:
-	AMateria(std::string const & type);
-	AMateria( const AMateria &aMateria );
 	AMateria();
-	virtual ~AMateria();
-	AMateria	&operator=(const AMateria &copy);
-	std::string  &getType() const; //Returns the materia type
+	AMateria(std::string const & type);
+	AMateria(const AMateria &copy);
+	AMateria *operator=(const AMateria &copy);
+	~AMateria();
+	std::string const &getType() const;
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
 };

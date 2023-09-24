@@ -4,14 +4,15 @@
 # include "IMateriaSource.hpp"
 # include "AMateria.hpp"
 
-class MateriaSource
+class MateriaSource : virtual public IMateriaSource
 {
-private:
-	AMateria _learned[4];
+protected:
+	AMateria _learnedMateria[4];
 public:
-	~MateriaSource() {}
-	void learnMateria(AMateria*);
-	AMateria* createMateria(std::string const & type);
+	MateriaSource();
+	MateriaSource(const MateriaSource &copy);
+	MateriaSource *operator=(const MateriaSource &copy);
+	~MateriaSource();
 };
 
 #endif
