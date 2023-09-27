@@ -11,9 +11,9 @@ public:
 	Animal( const Animal &animal );
 	Animal(std::string type);
 	virtual ~Animal();			// FINISH DESTRUCTORS!!!!!!!!!
-	Animal	&operator=(const Animal &copy);
-	virtual void    makeSound( void ) const;
-	std::string     getType( void ) const;
+	virtual Animal	&operator=(const Animal &copy);
+	virtual void    makeSound( void ) const = 0;
+	virtual std::string     getType( void ) const = 0;
 };
 
 #endif

@@ -24,18 +24,10 @@ Animal	&Animal::operator=(const Animal &copy){
 	return *this;
 }
 
-void Animal::makeSound() const{
-	std::cout << "Animal sound" << std::endl;
-}
-
 Animal::Animal( const Animal &animal )
 {
 	std::cout << "Animal constructor called" << std::endl;
 	this->_type = animal._type;
 	this->_brain = new Brain;
 	_brain->copyIdeas(animal._brain);
-}
-
-std::string     Animal::getType( void ) const{
-	return this->_type;
 }

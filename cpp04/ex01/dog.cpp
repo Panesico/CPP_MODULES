@@ -13,6 +13,7 @@ Dog::Dog(std::string type){
 
 Dog::~Dog(){
 	std::cout << "Dog destructor called" << std::endl;
+	delete _brain;
 }
 
 Dog	&Dog::operator=(const Dog &copy){
@@ -20,8 +21,7 @@ Dog	&Dog::operator=(const Dog &copy){
 	if ( this != &copy ) {
 		this->_type = copy._type;
 		this->_brain = new Brain;
-		for (int i = 0; i < 100; ++i)
-			this->_brain->_ideas[i] = copy._brain->ideas[i];
+		_brain->copyIdeas(copy._brain);
 	}
 	return *this;
 }
@@ -35,8 +35,7 @@ Dog::Dog( const Dog &dog ) : Animal(dog)
 	std::cout << "Dog constructor called" << std::endl;
 	this->_type = dog._type;
 	this->_brain = new Brain;
-	for (int i = 0; i < 100; ++i)
-		this->_brain->_ideas[i] = dog._brain->ideas[i];
+	_brain->copyIdeas(dog._brain);
 }
 
 std::string     Dog::getType( void ) const{

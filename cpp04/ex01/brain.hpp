@@ -14,8 +14,8 @@ public:
 	~Brain();
 	Brain	&operator=(const Brain &copy);
 	std::string getIdea(int i);
-	void changeIdea(int i);
-	void copyIdeas(const Brain &copy);
+	void changeIdea(int i, std::string newIdea);
+	void copyIdeas(const Brain *copy);
 };
 
 #endif

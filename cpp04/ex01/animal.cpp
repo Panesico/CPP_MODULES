@@ -19,8 +19,7 @@ Animal	&Animal::operator=(const Animal &copy){
 	if ( this != &copy ) {
 		this->_type = copy._type;
 		this->_brain = new Brain;
-		for (int i = 0; i < 100; ++i)
-			this->_brain->_ideas[i] = copy._brain->ideas[i];
+		_brain->copyIdeas(copy._brain);
 	}
 	return *this;
 }
@@ -34,8 +33,7 @@ Animal::Animal( const Animal &animal )
 	std::cout << "Animal constructor called" << std::endl;
 	this->_type = animal._type;
 	this->_brain = new Brain;
-	for (int i = 0; i < 100; ++i)
-		this->_brain->_ideas[i] = animal._brain->ideas[i];
+	_brain->copyIdeas(animal._brain);
 }
 
 std::string     Animal::getType( void ) const{

@@ -13,6 +13,7 @@ Cat::Cat(std::string type){
 
 Cat::~Cat(){
 	std::cout << "Cat destructor called" << std::endl;
+	delete _brain;
 }
 
 Cat	&Cat::operator=(const Cat &copy){
@@ -20,8 +21,7 @@ Cat	&Cat::operator=(const Cat &copy){
 	if ( this != &copy ) {
 		this->_type = copy._type;
 		this->_brain = new Brain;
-		for (int i = 0; i < 100; ++i)
-			this->_brain->_ideas[i] = copy._brain->ideas[i];
+		_brain->copyIdeas(copy._brain);
 	}
 	return *this;
 }
@@ -34,8 +34,7 @@ Cat::Cat( const Cat &cat ): Animal(cat){
 	std::cout << "Cat constructor called" << std::endl;
 	this->_type = cat._type;
 	this->_brain = new Brain;
-	for (int i = 0; i < 100; ++i)
-		this->_brain->_ideas[i] = cat._brain->ideas[i];
+	_brain->copyIdeas(cat._brain);
 }
 
 std::string     Cat::getType( void ) const{
