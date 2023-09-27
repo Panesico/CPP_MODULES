@@ -3,37 +3,41 @@
 
 AMateria::AMateria()
 {
-
+	std::cout << "Calling AMateria constructor" << std::endl;
 }
 
 AMateria::AMateria(std::string const & type)
 {
-
+	std::cout << "Calling type AMateria constructor" << std::endl;
+	if (type == "Ice")
+		_type = type;
+	else if (type == "Cure")
+		_type = type;
+	else
+		_type = "Unkown";
 }
 
 AMateria::AMateria(const AMateria &copy)
 {
-
+	std::cout << "Calling copy AMateria constructor" << std::endl;
+	_type = copy._type;
 }
 
 AMateria *AMateria::operator=(const AMateria &copy)
 {
-
+	std::cout << "Calling AMateria equal operator" << std::endl;
+	AMateria *materia = new AMateria(copy);
+	return materia;
 }
 
 AMateria::~AMateria()
 {
-
+	std::cout << "Calling AMateria destructor" << std::endl;
 }
 
 std::string const &AMateria::getType() const
 {
 	return _type;
-}
-
-AMateria::AMateria* clone()
-{
-
 }
 
 void AMateria::use(ICharacter& target)
